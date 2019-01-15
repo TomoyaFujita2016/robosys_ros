@@ -1,0 +1,9 @@
+<launch>
+	<include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch">
+		<arg name="port" value="9000"/>
+	</include>
+	<node pkg="mypkg" name="count" type="count.py" required="true" />
+	<node pkg="mypkg" name="twice" type="twice.py" required="true" />
+	<node pkg="mypkg" name="webserver" type="webserver.py" args="8000" required="true" />
+</launch>
+	
